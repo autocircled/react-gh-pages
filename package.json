@@ -2,15 +2,15 @@
   "name": "my-app",
   "private": true,
   "version": "0.1.0",
-  "homepage": "https://autocirlced.github.io/react-gh-pages",
+  "homepage": "https://autocircled.github.io/react-gh-pages",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "vite build && powershell -Command \"Copy-Item ./dist/index.html -Destination ./dist/404.html\"",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "react": "^19.1.0",
